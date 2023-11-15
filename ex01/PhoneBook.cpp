@@ -47,15 +47,16 @@ void phonebook::printAllContact (void) const {
 void phonebook::setContact(int i)
 {
 	std::cout << "Enter your first name: ";
-	std::getline(std::cin, this->_firstName);
+	std::getline(std::cin, this->_contact[i].firstName);
+
 	std::cout << "Enter your last name: ";
-	std::getline(std::cin, this->_lastName);
+	std::getline(std::cin, this->_contact[i].lastName);
 	std::cout << "Enter your nickname: ";
-	std::getline(std::cin, this->_nickname);
+	std::getline(std::cin, this->_contact[i].nickname);
 	std::cout << "Enter your phone number: ";
-	std::getline(std::cin, this->_number);
+	std::getline(std::cin, this->_contact[i].phone);
 	std::cout << "Enter your darkest secret: ";
-	std::getline(std::cin, this->_darkestSecret);
+	std::getline(std::cin, this->_contact[i].darkestSecret);
 	this->_index = i;
 }
 
@@ -63,15 +64,12 @@ void phonebook::setContact(int i)
 void phonebook::searchContact(void)
 {
 	std::string index;
+
 	std::cout << "Enter an index: ";
 	std::getline(std::cin, index);
-	if (index.length() == 1 && index[0] >= '0' && index[0] <= '7')
-	{
-		if (index[0] - '0' < _index)
-			printContact(index[0] - '0');
-		else
-			std::cout << "No contact at this index." << std::endl;
-	}
-	else
-		std::cout << "Invalid index." << std::endl;
+}
+
+int phonebook::getIndex(void) const
+{
+	return (this->_index);
 }

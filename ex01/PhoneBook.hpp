@@ -13,6 +13,7 @@ public:
 	void searchContact(void);
 	void printContact(int i) const;
 	void printAllContact(void) const;
+	int getIndex(void) const;
 
 private:
 	int _index;
