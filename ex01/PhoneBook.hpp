@@ -2,24 +2,28 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include "Main.hpp"
+# include <iostream>
+# include <iomanip>
 
 class phonebook {
 public:
 	phonebook(void);
 	~phonebook(void);
-	void setContact(int index, std::string firstName, std::string lastName, std::string nickname, std::string number, std::string darkestSecret);
-	void searchContact();
-	Contact getContact(int index);
-	std::string getFirstName(int index);
-	std::string getLastName(int index);
-	std::string getNickname(int index);
-	std::string getNumber(int index);
-	std::string getDarkestSecret(int index);
+	void setContact(int i);
+	void searchContact(void);
+	void printContact(int i) const;
+	void printAllContact(void) const;
 
 private:
-	Contact _contacts[8];
 	int _index;
+	std::string _firstName;
+	std::string _lastName;
+	std::string _nickname;
+	std::string _number;
+	std::string _darkestSecret;
 };
+
+
+
 
 #endif

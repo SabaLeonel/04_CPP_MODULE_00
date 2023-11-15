@@ -10,7 +10,7 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 # Source files
-SRC = Contact.cpp Main.cpp PhoneBook.cpp
+SRC = Main.cpp PhoneBook.cpp
 
 # Object files
 OBJ = $(SRC:.cpp=.o)
