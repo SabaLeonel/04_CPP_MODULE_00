@@ -7,7 +7,7 @@ TARGET = phonebook
 CXX = g++
 
 # Compiler flags
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g
 
 # Source files
 SRC = Main.cpp \

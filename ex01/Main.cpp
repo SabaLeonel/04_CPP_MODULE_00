@@ -10,22 +10,20 @@ int main(void)
 	while (1)
 	{
 		std::cout << "Enter a command ADD | SEARCH | EXIT : ";
-		if (std::getline(std::cin, str))
+		if (!std::getline(std::cin, str) || str == "EXIT" || std::cin.eof())
+				exit(1) ;
+		else if (str == "ADD")
+			phonebook.setContact();
+		else if (str == "SEARCH")
 		{
-			if (str == "EXIT")
-				break ;
-			else if (str == "ADD")
-				phonebook.setContact();
-			else if (str == "SEARCH")
-				phonebook.getContact();
-			else
-				std::cout << "usage: [ADD][SEARCH][EXIT]." << std::endl;
+			phonebook.Display();
+			phonebook.getContact();
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 		else
-		{
-			if (std::cin.eof())
-				break ;
-		}
+			std::cout << "usage: [ADD][SEARCH][EXIT]." << std::endl;
 	}
 	return (0);
 }
+

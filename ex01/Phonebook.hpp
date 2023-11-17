@@ -2,6 +2,8 @@
  #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
+#include <limits>
+
 
 class Phonebook {
 public:
@@ -11,10 +13,9 @@ public:
 	~Phonebook(void);
 	//set a contact
 	void setContact();
-	void printContact(Contact contactlist);
 	// gets a contact
-	Contact getContact(int index);
-
+	void getContact(void);
+	void Display(void);
 private:
 	// Array of contacts
 	Contact _contact[8];

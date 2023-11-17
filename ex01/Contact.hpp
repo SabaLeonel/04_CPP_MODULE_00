@@ -10,24 +10,29 @@ public:
 	Contact(void);
 	//destructor
 	~Contact(void);
-	//getters
 	std::string getFirstName(void) const;
-	std::string getLastName(void) const;
-	std::string getNickname(void) const;
-	std::string getNumber(void) const;
-	std::string getDarkestSecret(void) const;
-	//setters
 	void setFirstName(std::string str);
+
+	std::string getLastName(void) const;
 	void setLastName(std::string str);
+
+	std::string getNickName(void) const;
 	void setNickName(std::string str);
+
+	std::string getNumber(void) const;
 	void setNumber(std::string str);
-	void setDarkestSecret(std::string str);
+
+	std::string getSecret(void) const;
+	void setSecret(std::string str);
+	bool getIsEmpty(void) const;
+	void setIsEmpty(bool isEmpty);
 private:
 	std::string _firstName;
 	std::string _lastName;
 	std::string _nickname;
 	std::string _number;
-	std::string _darkestSecret;
+	std::string _secret;
+	bool		_isEmpty;
 };
 
 

@@ -1,6 +1,7 @@
 #include "Contact.hpp"
 
 Contact::Contact(void) {
+	_isEmpty = true;
 	return ;
 }
 
@@ -19,19 +20,18 @@ std::string Contact::getLastName(void) const
 	return (this->_lastName);
 }
 
-std::string Contact::getNickname(void) const
+std::string Contact::getNickName(void) const
 {
 	return (this->_nickname);
 }
 
-std::string Contact::getDarkestSecret() const
-{
-	return (this->_darkestSecret);
+std::string Contact::getSecret() const {
+	return (this->_secret);
 }
 
 std::string Contact::getNumber() const
 {
-	return (this->_number)
+	return (this->_number);
 }
 
 void	Contact::setFirstName(std::string str) {
@@ -53,6 +53,17 @@ void	Contact::setNumber(std::string str)
 	this->_number = str;
 }
 
-void	Contact::setDarkestSecret(std::string str) {
-	this->_darkestSecret = str;
+void	Contact::setSecret(std::string str) {
+	this->_secret = str;
+}
+
+void	Contact::setIsEmpty(bool isEmpty)
+{
+	this->_isEmpty = isEmpty;
+}
+
+
+bool Contact::getIsEmpty(void) const
+{
+	return (this->_isEmpty);
 }
